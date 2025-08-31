@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O2 My Adda - Complete Transformation of Mind Body and Soul</title>
+    <title>O2 My Adda </title>
     <style>
         * {
             margin: 0;
@@ -24,10 +24,11 @@
             background: linear-gradient(135deg, #2c5530, #4a7c59);
             position: relative;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             color: white;
-            text-align: center;
+            text-align: left;
+            padding: 50px;
         }
 
         .hero-bg {
@@ -43,21 +44,46 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
-            padding: 0 20px;
+            max-width: 600px;
+            margin-top: 80px;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        /* Fixed Logo */
+        .fixed-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: auto;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .fixed-logo.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         /* Scroller Section */
@@ -100,7 +126,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0,0,0,0.6);
             padding: 40px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -109,12 +135,12 @@
         .slide-content h2 {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .slide-content p {
             font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .scroller-nav {
@@ -132,7 +158,7 @@
             height: 50px;
             border: none;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             color: white;
             cursor: pointer;
             display: flex;
@@ -144,7 +170,7 @@
         }
 
         .scroller-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255,255,255,0.4);
             transform: scale(1.1);
         }
 
@@ -162,7 +188,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255,255,255,0.4);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -195,7 +221,7 @@
             background: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
@@ -271,7 +297,7 @@
         .milestones-section h2 {
             font-size: 2.5rem;
             margin-bottom: 50px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .mountain-chart {
@@ -294,41 +320,36 @@
         .peak1 {
             border-left: 30px solid transparent;
             border-right: 30px solid transparent;
-            border-bottom: 80px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 80px solid rgba(255,255,255,0.3);
         }
 
         .peak2 {
             border-left: 40px solid transparent;
             border-right: 40px solid transparent;
-            border-bottom: 120px solid rgba(255, 255, 255, 0.5);
+            border-bottom: 120px solid rgba(255,255,255,0.5);
         }
 
         .peak3 {
             border-left: 50px solid transparent;
             border-right: 50px solid transparent;
-            border-bottom: 160px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 160px solid rgba(255,255,255,0.7);
         }
 
         .peak4 {
             border-left: 40px solid transparent;
             border-right: 40px solid transparent;
-            border-bottom: 100px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 100px solid rgba(255,255,255,0.4);
         }
 
         .peak5 {
             border-left: 35px solid transparent;
             border-right: 35px solid transparent;
-            border-bottom: 90px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 90px solid rgba(255,255,255,0.3);
         }
 
         @keyframes growPeak {
-            from {
-                transform: scaleY(0);
-            }
-
-            to {
-                transform: scaleY(1);
-            }
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
         }
 
         /* Partners Section */
@@ -347,7 +368,7 @@
         .partners-section h2 {
             font-size: 2.5rem;
             margin-bottom: 50px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .partners-grid {
@@ -358,7 +379,7 @@
         }
 
         .partner-logo {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             padding: 20px;
             border-radius: 10px;
             transition: transform 0.3s ease;
@@ -367,7 +388,7 @@
 
         .partner-logo:hover {
             transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
         }
 
         .partner-logo img {
@@ -413,6 +434,18 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero {
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .hero-content {
+                margin-top: 0;
+                text-align: center;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -436,6 +469,12 @@
             .partners-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
                 gap: 20px;
+            }
+
+            .fixed-logo {
+                top: 10px;
+                left: 10px;
+                width: 60px;
             }
         }
 
@@ -467,7 +506,7 @@
         .cta-button:hover {
             background: #45a049;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -477,11 +516,13 @@
     <section class="hero">
         <img src="images/hero-background.jpg" alt="Hero Background" class="hero-bg">
         <div class="hero-content">
-            <h1>Complete Transformation of Mind Body and Soul</h1>
-            <p>Embrace Holistic Growth</p>
-            <a href="#scroller" class="cta-button">Discover Our Journey</a>
+            <img src="images/o2ParkLogo.png" alt="O2 Park Logo" class="hero-logo">
+            <h1>घर से अंतर्राष्ट्रीय स्तर तक</h1>
         </div>
     </section>
+
+    <!-- Fixed Logo (appears after scrolling) -->
+    <img src="images/o2ParkLogo.png" alt="O2 Park Logo" class="fixed-logo" id="fixedLogo">
 
     <!-- Scroller Section -->
     <section id="scroller" class="scroller-section">
@@ -766,6 +807,18 @@
         // Initialize scroll animations
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run once on load
+
+        // Fixed logo visibility on scroll
+        window.addEventListener('scroll', function() {
+            const fixedLogo = document.getElementById('fixedLogo');
+            const heroHeight = document.querySelector('.hero').offsetHeight;
+            
+            if (window.scrollY > heroHeight * 0.5) {
+                fixedLogo.classList.add('visible');
+            } else {
+                fixedLogo.classList.remove('visible');
+            }
+        });
     </script>
 </body>
 
